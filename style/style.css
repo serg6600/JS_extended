@@ -1,0 +1,11 @@
+.workday{
+    font-style: normal;
+}
+
+.weekend{
+    font-style: italic;
+}
+
+.today{
+    font-weight: bold;
+}
