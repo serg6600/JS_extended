@@ -2,7 +2,7 @@
 
 let week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 let date = new Date();
-let today = date.getDay();
+let today = Number(date.getDay());
 
 let fixdata = function(today){
     if (today === 0){
@@ -20,7 +20,7 @@ for(let item in week){
     } else {
         div.className = 'workday';
     }
-    if (fixdata(today) === item) {
+    if (fixdata(today) === Number(item)) {
         div.classList.add('today');
     }
     div.textContent = week[item];
