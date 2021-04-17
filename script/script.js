@@ -1,28 +1,19 @@
 'use strict';
 
-let week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+let week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 let date = new Date();
 let today = Number(date.getDay());
 
-let fixdata = function(today){
-    if (today === 0){
-        today = 6;
-        return(today);
-        }
-    today--;
-    return(today);
-};
-
 for(let item in week){
-    let div = document.createElement('div');
-    if (week[item] === 'Sunday' || week[item] === 'Saturday'){
-    div.className = 'weekend';
-    } else {
-        div.className = 'workday';
+ 	let div = document.createElement('div');
+	div.textContent = week[item];
+	document.body.append(div);
+	if (week[item] === 'Sunday' || week[item] === 	'Saturday')
+		{ 
+		    div.style.fontStyle = 'italic';
+		}
+    if (today === Number(item)) {
+        div.style.fontWeight = 'bold';
     }
-    if (fixdata(today) === Number(item)) {
-        div.classList.add('today');
-    }
-    div.textContent = week[item];
     document.body.append(div);
 }
